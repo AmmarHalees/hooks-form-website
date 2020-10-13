@@ -1,34 +1,51 @@
 import { useState } from 'react';
+import { findErrors } from './validator';
 
 const useForm = () => {
 
+
+
+    const [errorsObject, setErrors] = useState({});
+
+    const [isError, setError] = useState(false);
+
+    const [loading, setLoading] = useState(false);
+
     const [values, setValues] = useState({
 
-        email: 'geoff@example.com',
-        password: '1234'
+        email: '',
+        password: ''
 
     });
 
-    const { email, password } = values;
 
-
-    function handleValidation(values){
-
-        console.log(values);
-
-    }
 
 
     function handleSubmit(e) {
 
         e.preventDefault();
 
-        handleValidation(values)
+        setLoading(true);
+
+        const [ error, errorsObject] = findErrors(values)
+
+        setErrors(errorsObject);
+        setError(error);
+
 
     }
 
 
     function handleChange({ target: { value, name } }) {
+
+
+        if(isError){
+
+
+            setError(false);
+            setErrors({})
+        }
+
 
         setValues(prevValues => ({
 
@@ -41,7 +58,7 @@ const useForm = () => {
     }
 
 
-    return [email, password, handleChange, handleSubmit];
+    return [values ,handleChange, handleSubmit , errorsObject , isError , loading];
 }
 
 export default useForm;

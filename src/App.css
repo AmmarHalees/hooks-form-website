@@ -2,3 +2,64 @@ label{
 
   display: block;
 }
+
+
+
+.input{
+
+  border: 2px solid;
+  border-radius: 1rem;
+
+  transition: border-color 300ms linear;
+  padding: 1rem;
+  margin-bottom: 5px;
+
+  display: block;
+  width: 300px;
+}
+
+.input:focus{
+
+  outline: 1rem;
+}
+
+.error { 
+
+border-color: red;
+}
+
+button{
+
+  background: transparent;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+  margin-top: 2rem;
+}
+
+
+
+button:hover{
+  cursor: pointer;
+
+}
+
+button:disabled{
+
+  border-color: rgba(128, 128, 128, 0.24);
+
+}
+
+button:disabled:hover{
+
+  cursor: not-allowed;
+  touch-action: none;
+
+}
+
+
+.error_text{
+
+  color: red;
+}

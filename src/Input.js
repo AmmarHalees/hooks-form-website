@@ -1,13 +1,13 @@
 import React from 'react';
 
-const Input = ({type , value ,handleChange ,required =true}) => {
+const Input = ({type , value ,handleChange ,required =true ,maxLength ,placeholder , error}) => {
     return ( 
 
-        <label htmlFor={type}>
+        <label htmlFor={type} >
 
         <h2>{type}</h2>
 
-        <input id={type} name={type} type={type} value={value} onChange={handleChange} required ={required}/>
+        <input className={`input ${error ? 'error' : ''}`} id={type} name={type} maxLength={maxLength} value={value} onChange={handleChange} placeholder={placeholder}/>
 
       </label>
      );
