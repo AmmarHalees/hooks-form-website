@@ -1,40 +1,49 @@
 import React from 'react';
 
-const RightSide = ({email_errors , password_errors}) => {
-    return (  
+const RightSide = ({ email_errors, password_errors }) => {
+  return (
 
 
-        <div>
+    <div className='upper'>
+      <h2>Errors</h2>
 
-        <div style={{ margin: '1rem' }}>
-          <h3>
-            email:</h3>
 
+      <div style={{ margin: '1rem' }}>
+        <h3>
+          email:</h3>
+
+        <ul>
           {email_errors.map(item => {
 
             return <li>{item}</li>
           })}
 
-        </div>
-
-        <div style={{ margin: '1rem' }}>
-
-          <h3>
-            pass:
-
-        </h3>
-
-          {password_errors.map(item => {
-
-            return <li>{item}</li>
-          })}
-
-
-        </div>
+        </ul>
 
       </div>
 
-    );
+      <div style={{ margin: '1rem' }}>
+
+        <h3>
+          pass:
+
+        </h3>
+
+       <ul>
+
+       {password_errors.map(item => {
+
+return <li>{item}</li>
+})}
+
+       </ul>
+
+
+      </div>
+
+    </div>
+
+  );
 }
- 
+
 export default RightSide;

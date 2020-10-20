@@ -3,7 +3,7 @@ import React from 'react';
 const Input = ({ type, value, errorMessage, handleChange, required = true, maxLength, placeholder, error }) => {
   return (
 
-    <div>
+    <div className='inputcontainer'>
       <label htmlFor={type} >
 
         <h2>{type}</h2>
@@ -12,7 +12,8 @@ const Input = ({ type, value, errorMessage, handleChange, required = true, maxLe
 
       </label>
 
-      <div className={'error_text'}>
+      <div className='error_text'>
+        
         {errorMessage}
       </div>
 
