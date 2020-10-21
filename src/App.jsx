@@ -24,7 +24,7 @@ const App = () => {
         split="vertical"
         minSize={200}
         maxSize={800}
-        defaultSize={400}
+        defaultSize={500}
         className="primary"
       >
         <div style={{ display: 'grid', alignItems: 'center', height: '100%' }}>

@@ -10,20 +10,20 @@ const RightSide = ({ email_errors, password_errors, didSubmit, email, password }
 
     <div className='upper'>
 
-      <div>
+      <div className='card'>
         <h2>Errors</h2>
 
 
         <div style={{ margin: '1rem' }}>
           <h3>
-            Email Errors {email_errors.length > 0 ? `(${email_errors.length}) - Ordered by priority ` : '' }:
-            
+            Email Errors {email_errors.length > 0 ? `(${email_errors.length}) - Ordered by priority ` : ''}:
+
             </h3>
 
           <ol>
-            {email_errors.map((item , i) => {
+            {email_errors.map((item, i) => {
 
-              return <li className='erroritem' style={(i === 0) && email_errors.length > 1 ? {borderBottom:'2px solid black' , fontStyle:'italic'} : {}} key={i}>{item}</li>
+              return <li className='erroritem' style={(i === 0) && email_errors.length > 1 ? { borderBottom: '2px solid black', fontStyle: 'italic' } : {}} key={i}>{item}</li>
             })}
 
           </ol>
@@ -33,14 +33,14 @@ const RightSide = ({ email_errors, password_errors, didSubmit, email, password }
         <div style={{ margin: '1rem' }}>
 
           <h3>
-          Password Errors {password_errors.length > 0 ? `(${password_errors.length}) - Ordered by priority ` : '' }:
+            Password Errors {password_errors.length > 0 ? `(${password_errors.length}) - Ordered by priority ` : ''}:
   </h3>
 
           <ol>
 
-            {password_errors.map(item => {
+            {password_errors.map((item, i) => {
 
-              return <li>{item}</li>
+              return <li className='erroritem' style={(i === 0) && password_errors.length > 1 ? { borderBottom: '2px solid black', fontStyle: 'italic' } : {}} key={i}>{item}</li>
             })}
 
           </ol>
@@ -63,16 +63,16 @@ const RightSide = ({ email_errors, password_errors, didSubmit, email, password }
 
               <p className='pass'>PASS</p>
 
-                  <p style={{width:'200px', wordBreak:'break-word' , fontWeight:'lighter'}}>
+              <p style={{ width: '200px', wordBreak: 'break-word', fontWeight: 'lighter' }}>
 
-                  {JSON.stringify({
+                {JSON.stringify({
 
-                      email,
-                      password
+                  email,
+                  password
 
-                  })}
+                })}
 
-                  </p>
+              </p>
 
             </div>)
             : ''

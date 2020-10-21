@@ -91,7 +91,38 @@ export const validationSchema = {
             }
 
         }
+        ,
 
+        {
+            pattern: /(?=.*[A-Z])/,
+            message: 'Password must contain at least 1 uppercase alphabetical character',
+            validator: function (password) {
+                return password.match(this.pattern)
+            }
+
+        }
+
+        ,
+
+        {
+            pattern: /(?=.*[0-9])/,
+            message: 'Password must contain at least 1 numeric character',
+            validator: function (password) {
+                return password.match(this.pattern)
+            }
+
+        }
+        
+        ,
+
+        {
+            pattern: /(?=.*[!@#$%^&*])/,
+            message: 'Password must contain at least one special character',
+            validator: function (password) {
+                return password.match(this.pattern)
+            }
+
+        }
     ]
 
 
