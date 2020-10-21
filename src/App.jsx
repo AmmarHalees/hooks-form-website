@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SplitPane from 'react-split-pane';
 
 import './App.css';
@@ -9,10 +9,39 @@ import RightSide from './RightSide';
 import useForm from './useForm';
 import ControlUnit from './ControlUnit';
 import Header from './Header';
+import { validationSchema } from './validationSchema';
 
 const App = () => {
 
-  const [{ email, password }, handleChange, handleSubmit, { email: email_errors = [], password: password_errors = [] }, isError, loading , didSubmit] = useForm();
+  const [emailControl, setEmailControl] = useState({
+
+    'required': true,
+    'minLength' : true,
+    'properFormatting':true
+
+  });
+
+  
+  const [{ email, password }, handleChange, handleSubmit, { email: email_errors = [], password: password_errors = [] }, isError, loading, didSubmit] = useForm(emailControl);
+
+
+  function handleControlChange(id, {target:{checked ,name}}){
+
+    console.log(name, checked)
+
+    setEmailControl(
+
+      (prevEmailControl) =>({
+
+        ...prevEmailControl,
+        [name]: checked
+
+      })
+
+    )
+
+  }
+
 
   return (
 
@@ -47,10 +76,60 @@ const App = () => {
           maxSize={500}
           split="horizontal">
 
-          <RightSide email_errors={email_errors} password_errors={password_errors} didSubmit={didSubmit}  email={email} password={password}/>
+          <RightSide email_errors={email_errors} password_errors={password_errors} didSubmit={didSubmit} email={email} password={password} />
 
-          <ControlUnit />
-          
+          {/* <ControlUnit /> */}
+
+          <div style={{ padding: '1rem', display:'grid', gridTemplateColumns:'1fr 1fr' }}>
+
+
+            <div style={{ padding: '1rem' }}>
+              <h2>Email</h2>
+
+              <ul>
+
+                {validationSchema.email.map(x => <li key={x.id}>
+
+                  <label>
+                    <input type='checkbox' checked={emailControl[x.id]} name={x.id} onChange={(e) =>handleControlChange(x.id ,e)}/>
+
+                    {x.message}
+
+                  </label>
+
+
+                </li>)}
+
+              </ul>
+
+
+            </div>
+
+            
+            <div style={{ padding: '1rem' }}>
+              <h2>Password</h2>
+
+              <ul>
+
+                {validationSchema.password.map(x => <li key={x.id}>
+
+                  <label>
+                    <input type='checkbox' />
+
+                    {x.message}
+
+                  </label>
+
+
+                </li>)}
+
+              </ul>
+
+
+            </div>
+
+          </div>
+
 
         </SplitPane>
 

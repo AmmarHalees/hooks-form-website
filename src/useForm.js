@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { findErrors } from './validator';
 
-const useForm = () => {
-
+const useForm = (emailControl) => {
 
 
     const [errorsObject, setErrors] = useState({});
@@ -30,7 +29,7 @@ const useForm = () => {
 
         setLoading(true);
 
-        const [ error, errorsObject] = findErrors(values)
+        const [ error, errorsObject] = findErrors(values ,emailControl)
 
         setErrors(errorsObject);
         setError(error);

@@ -5,6 +5,7 @@ export const validationSchema = {
     email: [
 
         {
+            id:'required',
             required: true,
             message: 'Email is required',
             validator: function (email) {
@@ -14,6 +15,7 @@ export const validationSchema = {
         }
         ,
         {
+            id:'minLength',
             minLength: 15,
             message: 'Email isnt long enough',
             validator: function (email) {
@@ -23,6 +25,7 @@ export const validationSchema = {
         },
 
         {
+            id:'properFormatting',
             pattern: /^\S+@\S+\.\S+$/,
             message: 'Email isnt correctly formatted',
             validator: function (email) {
@@ -39,6 +42,7 @@ export const validationSchema = {
 
 
         {
+            
             required: true,
             message: 'Password is required',
             validator: function (password) {
