@@ -11,6 +11,9 @@ const useForm = () => {
 
     const [loading, setLoading] = useState(false);
 
+    const [didSubmit, setDidSubmit] = useState(false);
+
+
     const [values, setValues] = useState({
 
         email: '',
@@ -32,12 +35,15 @@ const useForm = () => {
         setErrors(errorsObject);
         setError(error);
 
+        setDidSubmit(true);
+
 
     }
 
 
     function handleChange({ target: { value, name } }) {
 
+        setDidSubmit(false);
 
         if(isError){
 
@@ -58,7 +64,7 @@ const useForm = () => {
     }
 
 
-    return [values ,handleChange, handleSubmit , errorsObject , isError , loading];
+    return [values ,handleChange, handleSubmit , errorsObject , isError , loading ,didSubmit];
 }
 
 export default useForm;

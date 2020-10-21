@@ -55,7 +55,44 @@ export const validationSchema = {
             }
 
         }
-    ],
+
+
+        ,
+
+        {
+            pattern: /^[\S]+$/,
+            message: 'Password Cannot contain spaces',
+            validator: function (password) {
+                return password.match(this.pattern)
+            }
+
+        }
+
+
+        ,
+
+        {
+            pattern: /^[\S]+$/,
+            message: 'Password Cannot contai spaces',
+            validator: function (password) {
+                return password.match(this.pattern)
+            }
+
+        }
+
+
+        ,
+
+        {
+            pattern: /(?=.*[a-z])/,
+            message: 'Password must contain at least 1 lowercase alphabetical character',
+            validator: function (password) {
+                return password.match(this.pattern)
+            }
+
+        }
+
+    ]
 
 
 }

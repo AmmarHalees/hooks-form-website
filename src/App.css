@@ -83,11 +83,18 @@ button:disabled:hover{
   touch-action: none;
 
 }
+.erroritem{
 
+  width: fit-content;
+
+  margin: 1rem;
+}
 
 .error_text{
 
   color: red;
+  word-break: break-word;
+  max-width: 329px;
 }
 
 .container{
@@ -114,6 +121,13 @@ button:disabled:hover{
 
 }
 
+.upper{
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+
 .header{
 
   padding: 1rem;
@@ -126,4 +140,9 @@ button:disabled:hover{
 
 .header h2{
   color: white;
+}
+
+.pass{
+
+  color: green;
 }

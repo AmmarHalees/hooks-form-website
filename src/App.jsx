@@ -12,7 +12,7 @@ import Header from './Header';
 
 const App = () => {
 
-  const [{ email, password }, handleChange, handleSubmit, { email: email_errors = [], password: password_errors = [] }, isError, loading] = useForm();
+  const [{ email, password }, handleChange, handleSubmit, { email: email_errors = [], password: password_errors = [] }, isError, loading , didSubmit] = useForm();
 
   return (
 
@@ -47,7 +47,7 @@ const App = () => {
           maxSize={500}
           split="horizontal">
 
-          <RightSide email_errors={email_errors} password_errors={password_errors} />
+          <RightSide email_errors={email_errors} password_errors={password_errors} didSubmit={didSubmit}  email={email} password={password}/>
 
           <ControlUnit />
           
