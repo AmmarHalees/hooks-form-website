@@ -16,29 +16,77 @@ const App = () => {
   const [emailControl, setEmailControl] = useState({
 
     'required': true,
-    'minLength' : true,
-    'properFormatting':true
+    'minLength': true,
+    'properFormatting': true
 
   });
 
-  
-  const [{ email, password }, handleChange, handleSubmit, { email: email_errors = [], password: password_errors = [] }, isError, loading, didSubmit] = useForm(emailControl);
+  const [passControl, setPassControl] = useState({
+
+    'required': true,
+    'minLength': true,
+    'noSpace': true,
+    'oneLowerCase': true,
+    'oneUpperCase': true,
+    'oneNumeric': true,
+    'oneSpecialChar': true
+
+  });
+  const [{ email, password }, handleChange, handleSubmit, { email: email_errors = [], password: password_errors = [] }, isError, loading, didSubmit, handleClear] = useForm(emailControl, passControl);
 
 
-  function handleControlChange(id, {target:{checked ,name}}){
 
-    console.log(name, checked)
 
-    setEmailControl(
+  function handleControlChange(type, { target: { checked, name } }) {
 
-      (prevEmailControl) =>({
 
-        ...prevEmailControl,
-        [name]: checked
+    if (type === 'email') {
 
-      })
+      setEmailControl(
 
-    )
+        (prevEmailControl) => ({
+
+          ...prevEmailControl,
+          [name]: checked
+
+        })
+
+      )
+
+      if (didSubmit) {
+
+        handleClear('email')
+
+      }
+
+    } else {
+
+
+
+      setPassControl(
+
+        (prevPassControl) => ({
+
+          ...prevPassControl,
+          [name]: checked
+
+        })
+
+      );
+
+
+
+      if (didSubmit) {
+
+        handleClear('passwrod')
+
+      }
+
+
+    }
+
+
+
 
   }
 
@@ -59,9 +107,9 @@ const App = () => {
         <div style={{ display: 'grid', alignItems: 'center', height: '100%' }}>
           <form onSubmit={handleSubmit} className='form'>
 
-            <Input error={email_errors.length > 0} errorMessage={email_errors[0]} type='email' value={email} handleChange={handleChange} required={true} maxLength='23' placeholder='jim@example.com' />
+            <Input handleClear={handleClear} error={email_errors.length > 0} errorMessage={email_errors[0]} type='email' value={email} handleChange={handleChange} required={true} maxLength='23' placeholder='jim@example.com' />
 
-            <Input error={password_errors.length > 0} errorMessage={password_errors[0]} type='password' value={password} handleChange={handleChange} required={true} maxLength='20' placeholder='123abcd' />
+            <Input handleClear={handleClear} error={password_errors.length > 0} errorMessage={password_errors[0]} type='password' value={password} handleChange={handleChange} required={true} maxLength='20' placeholder='123abcd' />
 
             <button disabled={isError} loading={loading} type='submit' id='submit'> Login</button>
 
@@ -80,54 +128,59 @@ const App = () => {
 
           {/* <ControlUnit /> */}
 
-          <div style={{ padding: '1rem', display:'grid', gridTemplateColumns:'1fr 1fr' }}>
+          <div style={{padding:'1rem'}}>
+
+            <h1>Validation Schema</h1>
+
+            <div style={{ padding: '1rem', display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
 
 
-            <div style={{ padding: '1rem' }}>
-              <h2>Email</h2>
+              <div style={{ padding: '1rem' }}>
+                <h2>Email</h2>
 
-              <ul>
+                <ul>
 
-                {validationSchema.email.map(x => <li key={x.id}>
+                  {validationSchema.email.map(x => <li key={x.id}>
 
-                  <label>
-                    <input type='checkbox' checked={emailControl[x.id]} name={x.id} onChange={(e) =>handleControlChange(x.id ,e)}/>
+                    <label>
+                      <input type='checkbox' checked={emailControl[x.id]} name={x.id} onChange={(e) => handleControlChange('email', e)} />
 
-                    {x.message}
+                      {x.message}
 
-                  </label>
+                    </label>
 
 
-                </li>)}
+                  </li>)}
 
-              </ul>
+                </ul>
 
+
+              </div>
+
+
+              <div style={{ padding: '1rem' }}>
+                <h2>Password</h2>
+
+                <ul>
+
+                  {validationSchema.password.map(x => <li key={x.id}>
+
+                    <label>
+                      <input type='checkbox' checked={passControl[x.id]} name={x.id} onChange={(e) => handleControlChange('pass', e)} />
+
+                      {x.message}
+
+                    </label>
+
+
+                  </li>)}
+
+                </ul>
+
+
+              </div>
 
             </div>
-
-            
-            <div style={{ padding: '1rem' }}>
-              <h2>Password</h2>
-
-              <ul>
-
-                {validationSchema.password.map(x => <li key={x.id}>
-
-                  <label>
-                    <input type='checkbox' />
-
-                    {x.message}
-
-                  </label>
-
-
-                </li>)}
-
-              </ul>
-
-
-            </div>
-
           </div>
 
 

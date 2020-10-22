@@ -36,11 +36,14 @@ label h2{
 
   display: block;
   width: 300px;
+  border: 3px solid black;
+
 }
 
 .input:focus{
 
   outline: 1rem;
+  border-color: blue;
 }
 
 .error { 
@@ -52,6 +55,28 @@ border-color: red;
 
   margin-bottom: 1rem;
   height: 120px;
+  position: relative;
+}
+
+.clearbutton{
+
+  position: absolute;
+  right: 1px;
+  top: 13px;
+  height: 49px;
+  padding: 0px;
+  padding-left: 11px;
+  padding-right: 10px;
+  display: grid;
+  align-items: center;
+  border: none;
+  border-radius: 0px 1rem 1rem 0px;
+
+}
+.clearbutton:focus{
+
+outline: none;
+
 }
 
 button{
@@ -150,5 +175,27 @@ button:disabled:hover{
 
 .card{
 overflow: auto;
+padding: 1rem;
 
+}
+
+
+.card::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.card::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.card::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 1rem;
+}
+
+/* Handle on hover */
+.card::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

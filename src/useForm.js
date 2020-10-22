@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { findErrors } from './validator';
 
-const useForm = (emailControl) => {
+const useForm = (emailControl , passControl) => {
 
 
     const [errorsObject, setErrors] = useState({});
@@ -21,7 +21,30 @@ const useForm = (emailControl) => {
     });
 
 
+    function handleClear(type){
 
+        setDidSubmit(false);
+
+        if(isError){
+
+
+            setError(false);
+            setErrors({})
+        }
+
+
+
+        setValues(prevValues =>({
+
+            ...prevValues,
+            [type] :''
+
+        }));
+
+
+
+    }
+  
 
     function handleSubmit(e) {
 
@@ -29,7 +52,7 @@ const useForm = (emailControl) => {
 
         setLoading(true);
 
-        const [ error, errorsObject] = findErrors(values ,emailControl)
+        const [ error, errorsObject] = findErrors(values ,emailControl,passControl)
 
         setErrors(errorsObject);
         setError(error);
@@ -63,7 +86,7 @@ const useForm = (emailControl) => {
     }
 
 
-    return [values ,handleChange, handleSubmit , errorsObject , isError , loading ,didSubmit];
+    return [values ,handleChange, handleSubmit , errorsObject , isError , loading ,didSubmit,handleClear];
 }
 
 export default useForm;

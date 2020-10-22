@@ -1,7 +1,7 @@
 import { validationSchema } from "./validationSchema";
 
 
-export function findErrors(values ,emailControl) {
+export function findErrors(values ,emailControl ,passControl) {
 
     let errors = {};
     let errorFlag = false;
@@ -10,12 +10,12 @@ export function findErrors(values ,emailControl) {
 
         ...validationSchema ,
 
-        email:validationSchema.email.filter(rule => emailControl[rule.id])
+        email:validationSchema.email.filter(rule => emailControl[rule.id]),
+        password:validationSchema.password.filter(rule => passControl[rule.id])
 
     }
 
-    console.log(localValidationSchema)
-    console.log(emailControl)
+
 
     Object
         .entries(values)

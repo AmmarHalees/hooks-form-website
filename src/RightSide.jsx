@@ -50,7 +50,7 @@ const RightSide = ({ email_errors, password_errors, didSubmit, email, password }
       </div>
 
 
-      <div>
+      <div className='card'>
 
         <h2>Tests/Result</h2>
 

@@ -42,7 +42,8 @@ export const validationSchema = {
 
 
         {
-            
+            id:'required',
+
             required: true,
             message: 'Password is required',
             validator: function (password) {
@@ -52,6 +53,8 @@ export const validationSchema = {
         }
         ,
         {
+            id:'minLength',
+
             minLength: 15,
             message: 'password isnt long enough',
             validator: function (password) {
@@ -64,6 +67,8 @@ export const validationSchema = {
         ,
 
         {
+            id:'noSpace',
+
             pattern: /^[\S]+$/,
             message: 'Password Cannot contain spaces',
             validator: function (password) {
@@ -76,18 +81,8 @@ export const validationSchema = {
         ,
 
         {
-            pattern: /^[\S]+$/,
-            message: 'Password Cannot contai spaces',
-            validator: function (password) {
-                return password.match(this.pattern)
-            }
 
-        }
-
-
-        ,
-
-        {
+            id:'oneLowerCase',
             pattern: /(?=.*[a-z])/,
             message: 'Password must contain at least 1 lowercase alphabetical character',
             validator: function (password) {
@@ -98,6 +93,7 @@ export const validationSchema = {
         ,
 
         {
+            id:'oneUpperCase',
             pattern: /(?=.*[A-Z])/,
             message: 'Password must contain at least 1 uppercase alphabetical character',
             validator: function (password) {
@@ -109,6 +105,7 @@ export const validationSchema = {
         ,
 
         {
+            id:'oneNumeric',
             pattern: /(?=.*[0-9])/,
             message: 'Password must contain at least 1 numeric character',
             validator: function (password) {
@@ -120,6 +117,7 @@ export const validationSchema = {
         ,
 
         {
+            id:'oneSpecialChar',
             pattern: /(?=.*[!@#$%^&*])/,
             message: 'Password must contain at least one special character',
             validator: function (password) {
