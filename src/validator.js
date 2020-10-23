@@ -17,6 +17,7 @@ export function findErrors(values ,emailControl ,passControl) {
 
 
 
+
     Object
         .entries(values)
         .forEach(([key, value]) => {
@@ -38,5 +39,5 @@ export function findErrors(values ,emailControl ,passControl) {
         );
 
 
-    return [errorFlag , errors]
+    return [errorFlag , errors ,localValidationSchema]
 }

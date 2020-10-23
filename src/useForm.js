@@ -6,6 +6,9 @@ const useForm = (emailControl , passControl) => {
 
     const [errorsObject, setErrors] = useState({});
 
+    const [newValidationSchema, setValidationSchema] = useState({});
+
+
     const [isError, setError] = useState(false);
 
     const [loading, setLoading] = useState(false);
@@ -52,10 +55,12 @@ const useForm = (emailControl , passControl) => {
 
         setLoading(true);
 
-        const [ error, errorsObject] = findErrors(values ,emailControl,passControl)
+        const [ error, errorsObject ,localValidationSchema] = findErrors(values ,emailControl,passControl)
 
         setErrors(errorsObject);
         setError(error);
+
+        setValidationSchema(localValidationSchema);
 
         setDidSubmit(true);
 
@@ -64,6 +69,8 @@ const useForm = (emailControl , passControl) => {
 
 
     function handleChange({ target: { value, name } }) {
+
+        console.log('onChange')
 
         setDidSubmit(false);
 
@@ -86,7 +93,7 @@ const useForm = (emailControl , passControl) => {
     }
 
 
-    return [values ,handleChange, handleSubmit , errorsObject , isError , loading ,didSubmit,handleClear];
+    return [values ,handleChange, handleSubmit , errorsObject , isError , loading ,didSubmit,handleClear ,newValidationSchema];
 }
 
 export default useForm;
