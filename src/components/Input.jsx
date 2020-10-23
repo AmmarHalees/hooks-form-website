@@ -1,5 +1,5 @@
 import React from 'react';
-import {ReactComponent as CloseIcon} from './assets/x.svg';
+import {ReactComponent as CloseIcon} from '../assets/img/x.svg';
 
 const Input = ({ type, value, errorMessage, handleChange, required = true, maxLength, placeholder, error ,handleClear }) => {
   return (

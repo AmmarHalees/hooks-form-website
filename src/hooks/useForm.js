@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { findErrors } from './validator';
+import { findErrors } from '../utils/validator';
 
 const useForm = (emailControl , passControl) => {
 

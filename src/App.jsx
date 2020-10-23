@@ -1,18 +1,15 @@
 import React, { useState } from 'react';
 import SplitPane from 'react-split-pane';
 
-import './App.css';
-import './pane.css';
+import ControlUnit from './components/ControlUnit';
+import Header from './components/Header';
+import Input from './components/Input';
+import RightSide from './components/RightSide';
+import useForm from './hooks/useForm';
+import { validationSchema } from './utils/validationSchema';
 
-import Input from './Input.jsx';
-import RightSide from './RightSide';
-import useForm from './useForm';
-import ControlUnit from './ControlUnit';
-import Header from './Header';
-import { validationSchema } from './validationSchema';
-
-
-
+import './assets/styles/App.css';
+import './assets/styles/pane.css';
 
 
 const App = () => {
