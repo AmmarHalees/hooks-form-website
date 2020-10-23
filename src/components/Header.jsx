@@ -1,15 +1,18 @@
 import React from 'react';
 
 const Header = () => {
-    return ( 
+  return (
 
-        <header className='header'>
+    <header className='header'>
 
-        <h2>Ammar Halees</h2>
-  
-      </header>
+      <a title='Repos' href='https://github.com/AmmarHalees/hooksFormWebsite/blob/master/src/utils/validator.js' target="_blank" rel="noopener noreferrer">
 
-     );
+        <h2>Validator</h2>
+
+      </a>
+    </header>
+
+  );
 }
- 
+
 export default React.memo(Header);
