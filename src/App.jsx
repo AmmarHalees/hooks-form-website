@@ -10,9 +10,12 @@ import { validationSchema } from './utils/validationSchema';
 
 import './assets/styles/App.css';
 import './assets/styles/pane.css';
+import useRenderCounter from './hooks/useRenderCounter';
 
 
 const App = () => {
+
+  const renderString = useRenderCounter('app');
 
   const [emailControl, setEmailControl] = useState({
 
@@ -110,7 +113,24 @@ const App = () => {
 
           <RightSide email_errors={email_errors} password_errors={password_errors} didSubmit={didSubmit} email={email} password={password} />
 
-          <ControlUnit validationSchema={validationSchema} emailControl={emailControl} passControl={passControl} handleControlChange={handleControlChange} />
+          <div>
+
+            <ControlUnit validationSchema={validationSchema} emailControl={emailControl} passControl={passControl} handleControlChange={handleControlChange} />
+
+{/* 
+            <div style={{ padding: '1rem' }}>
+
+              <h2>Benchmark</h2>
+
+              <div style={{padding:'1rem'}}>
+
+                {renderString}
+
+
+              </div>
+            </div> */}
+
+          </div>
 
         </SplitPane>
 
@@ -123,4 +143,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default React.memo(App);

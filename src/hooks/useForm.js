@@ -70,7 +70,6 @@ const useForm = (emailControl , passControl) => {
 
     function handleChange({ target: { value, name } }) {
 
-        console.log('onChange')
 
         setDidSubmit(false);
 

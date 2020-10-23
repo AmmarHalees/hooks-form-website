@@ -6,12 +6,6 @@ const ControlUnit = ({validationSchema , emailControl , passControl ,handleContr
 
         <section className='lower'>
 
-                <header style={{padding:'1rem', borderBottom:'1px solid grey'}}>     
-                    
-                           <h2>Control Unit</h2>
-
-                </header>
-
             
           <div style={{padding:'1rem'}}>
 
@@ -73,4 +67,4 @@ const ControlUnit = ({validationSchema , emailControl , passControl ,handleContr
      );
 }
  
-export default ControlUnit;
+export default React.memo(ControlUnit);

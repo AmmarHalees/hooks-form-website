@@ -2,14 +2,16 @@ import React from 'react';
 import {ReactComponent as CloseIcon} from '../assets/img/x.svg';
 
 const Input = ({ type, value, errorMessage, handleChange, required = true, maxLength, placeholder, error ,handleClear }) => {
+ 
+  
   return (
 
     <div className='inputcontainer'>
       <label htmlFor={type} >
 
-        <h2>{type}</h2>
+        <h2>{`${type[0].toUpperCase()}${type.slice(1)}` }</h2>
 
-        <button onClick={() =>handleClear (type)}type='reset' className='clearbutton' title='clear'>
+        <button disabled={value.length === 0} onClick={() =>handleClear (type)}type='reset' className='clearbutton' title='clear'>
 
           <CloseIcon/>
 
@@ -28,4 +30,4 @@ const Input = ({ type, value, errorMessage, handleChange, required = true, maxLe
   );
 }
 
-export default Input;
+export default React.memo(Input);

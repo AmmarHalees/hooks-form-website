@@ -1,6 +1,5 @@
 import { validationSchema } from "./validationSchema";
 
-
 export function findErrors(values ,emailControl ,passControl) {
 
     let errors = {};
@@ -16,8 +15,6 @@ export function findErrors(values ,emailControl ,passControl) {
     }
 
 
-
-
     Object
         .entries(values)
         .forEach(([key, value]) => {
@@ -29,15 +26,11 @@ export function findErrors(values ,emailControl ,passControl) {
 
                 errors[key] = localValidationSchema[key].filter(rule => !rule.validator(value))
                 .map(error => error.message); 
-            }
-     
-                          
+            }            
 
         }
 
-
         );
-
 
     return [errorFlag , errors ,localValidationSchema]
 }
