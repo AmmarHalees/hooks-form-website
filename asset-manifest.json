@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/studyforms/static/css/main.c9c04365.chunk.css",
-    "main.js": "/studyforms/static/js/main.526b1c6c.chunk.js",
-    "main.js.map": "/studyforms/static/js/main.526b1c6c.chunk.js.map",
-    "runtime-main.js": "/studyforms/static/js/runtime-main.e96b213d.js",
-    "runtime-main.js.map": "/studyforms/static/js/runtime-main.e96b213d.js.map",
-    "static/js/2.d41ba07f.chunk.js": "/studyforms/static/js/2.d41ba07f.chunk.js",
-    "static/js/2.d41ba07f.chunk.js.map": "/studyforms/static/js/2.d41ba07f.chunk.js.map",
-    "index.html": "/studyforms/index.html",
-    "precache-manifest.c493d7b6559e748f6ccf02b033c56b2f.js": "/studyforms/precache-manifest.c493d7b6559e748f6ccf02b033c56b2f.js",
-    "service-worker.js": "/studyforms/service-worker.js",
-    "static/css/main.c9c04365.chunk.css.map": "/studyforms/static/css/main.c9c04365.chunk.css.map",
-    "static/js/2.d41ba07f.chunk.js.LICENSE.txt": "/studyforms/static/js/2.d41ba07f.chunk.js.LICENSE.txt",
-    "static/media/x.b0200bf7.svg": "/studyforms/static/media/x.b0200bf7.svg"
+    "main.css": "/hooksFormWebsite/static/css/main.c9c04365.chunk.css",
+    "main.js": "/hooksFormWebsite/static/js/main.d0b53c62.chunk.js",
+    "main.js.map": "/hooksFormWebsite/static/js/main.d0b53c62.chunk.js.map",
+    "runtime-main.js": "/hooksFormWebsite/static/js/runtime-main.25cbcb72.js",
+    "runtime-main.js.map": "/hooksFormWebsite/static/js/runtime-main.25cbcb72.js.map",
+    "static/js/2.194100eb.chunk.js": "/hooksFormWebsite/static/js/2.194100eb.chunk.js",
+    "static/js/2.194100eb.chunk.js.map": "/hooksFormWebsite/static/js/2.194100eb.chunk.js.map",
+    "index.html": "/hooksFormWebsite/index.html",
+    "precache-manifest.49a2d6a55a7091d05e7fcc3ca27a0afc.js": "/hooksFormWebsite/precache-manifest.49a2d6a55a7091d05e7fcc3ca27a0afc.js",
+    "service-worker.js": "/hooksFormWebsite/service-worker.js",
+    "static/css/main.c9c04365.chunk.css.map": "/hooksFormWebsite/static/css/main.c9c04365.chunk.css.map",
+    "static/js/2.194100eb.chunk.js.LICENSE.txt": "/hooksFormWebsite/static/js/2.194100eb.chunk.js.LICENSE.txt",
+    "static/media/x.b0200bf7.svg": "/hooksFormWebsite/static/media/x.b0200bf7.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.e96b213d.js",
-    "static/js/2.d41ba07f.chunk.js",
+    "static/js/runtime-main.25cbcb72.js",
+    "static/js/2.194100eb.chunk.js",
     "static/css/main.c9c04365.chunk.css",
-    "static/js/main.526b1c6c.chunk.js"
+    "static/js/main.d0b53c62.chunk.js"
   ]
 }
