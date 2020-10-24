@@ -1,6 +1,6 @@
 {
-  "homepage": "https://AmmarHalees.github.io/hooksFormWebsite/",
-  "name":"hooks",
+  "homepage": "https://AmmarHalees.github.io/hooks-form-website/",
+  "name":"hooks-form-website",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
