@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/studyforms/static/css/main.c9c04365.chunk.css",
+    "main.js": "/studyforms/static/js/main.526b1c6c.chunk.js",
+    "main.js.map": "/studyforms/static/js/main.526b1c6c.chunk.js.map",
+    "runtime-main.js": "/studyforms/static/js/runtime-main.e96b213d.js",
+    "runtime-main.js.map": "/studyforms/static/js/runtime-main.e96b213d.js.map",
+    "static/js/2.d41ba07f.chunk.js": "/studyforms/static/js/2.d41ba07f.chunk.js",
+    "static/js/2.d41ba07f.chunk.js.map": "/studyforms/static/js/2.d41ba07f.chunk.js.map",
+    "index.html": "/studyforms/index.html",
+    "precache-manifest.c493d7b6559e748f6ccf02b033c56b2f.js": "/studyforms/precache-manifest.c493d7b6559e748f6ccf02b033c56b2f.js",
+    "service-worker.js": "/studyforms/service-worker.js",
+    "static/css/main.c9c04365.chunk.css.map": "/studyforms/static/css/main.c9c04365.chunk.css.map",
+    "static/js/2.d41ba07f.chunk.js.LICENSE.txt": "/studyforms/static/js/2.d41ba07f.chunk.js.LICENSE.txt",
+    "static/media/x.b0200bf7.svg": "/studyforms/static/media/x.b0200bf7.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e96b213d.js",
+    "static/js/2.d41ba07f.chunk.js",
+    "static/css/main.c9c04365.chunk.css",
+    "static/js/main.526b1c6c.chunk.js"
+  ]
+}
